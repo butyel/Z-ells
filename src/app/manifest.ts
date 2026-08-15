@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Z'ells — SEO Local, Google Maps e Posicionamento no Google",
+    name: "Z'ells | SEO Local, Google Maps e Posicionamento no Google",
     short_name: "Z'ells",
     description:
       "Agência de SEO Local. Posiciona empresas no Google, no Google Maps e nas buscas por inteligência artificial.",

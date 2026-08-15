@@ -8,7 +8,7 @@ function Logo() {
     <a
       href="#inicio"
       className="group inline-flex items-baseline gap-1 font-display text-xl font-bold tracking-tight"
-      aria-label="Z'ells — ir para o início"
+      aria-label="Z'ells, ir para o início"
     >
       <span className="text-foreground">Z&rsquo;ells</span>
       <span className="h-1.5 w-1.5 self-center rounded-full bg-lime transition-transform duration-200 group-hover:scale-150" />

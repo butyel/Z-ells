@@ -22,8 +22,8 @@ export function Footer() {
             </a>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
               Agência boutique de SEO Local. Posicionamos empresas no Google, no
-              Google Maps e nas buscas por inteligência artificial &mdash; para
-              que você seja encontrado, reconhecido e escolhido.
+              Google Maps e nas buscas por inteligência artificial. Para que você
+              seja encontrado, reconhecido e escolhido.
             </p>
           </div>
 

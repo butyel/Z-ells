@@ -80,7 +80,7 @@ export const servicesSchema = {
     {
       "@type": "Service",
       position: 4,
-      name: "GEO — Otimização para inteligência artificial",
+      name: "GEO: otimização para inteligência artificial",
       description:
         "Estratégia para a sua empresa ser citada nas respostas de ferramentas de busca por inteligência artificial.",
       provider: { "@type": "ProfessionalService", name: SITE_NAME },

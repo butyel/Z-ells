@@ -50,7 +50,7 @@ const services: ServiceItem[] = [
     tag: "Site",
   },
   {
-    title: "GEO — Otimização para IA",
+    title: "GEO: otimização para IA",
     description:
       "Estratégia para a sua empresa ser citada nas respostas das ferramentas de busca por inteligência artificial.",
     items: [

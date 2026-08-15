@@ -85,7 +85,7 @@ export function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
             A Z&rsquo;ells posiciona o seu negócio no Google, no Google Maps e nas
             buscas por inteligência artificial para que você seja encontrado de
-            forma natural &mdash; e escolhido.
+            forma natural e escolhido.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
