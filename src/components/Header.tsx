@@ -1,24 +1,36 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NAV_LINKS, WHATSAPP_URL } from "@/lib/site";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { MAIN_NAV } from "@/data/navigation";
+import { WHATSAPP_URL } from "@/config/site";
 
-function Logo() {
+function Logo({ onClick }: { onClick?: () => void }) {
   return (
-    <a
-      href="#inicio"
+    <Link
+      href="/"
+      onClick={onClick}
       className="group inline-flex items-baseline gap-1 font-display text-xl font-bold tracking-tight"
       aria-label="Z'ells, ir para o início"
     >
       <span className="text-foreground">Z&rsquo;ells</span>
       <span className="h-1.5 w-1.5 self-center rounded-full bg-lime transition-transform duration-200 group-hover:scale-150" />
-    </a>
+    </Link>
   );
+}
+
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  if (href === "/servicos/") return pathname.startsWith("/servicos");
+  return pathname.startsWith(href);
 }
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -43,18 +55,78 @@ export function Header() {
       }`}
     >
       <div className="container-site flex h-16 items-center justify-between lg:h-[72px]">
-        <Logo />
+        <Logo onClick={() => setOpen(false)} />
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
-          <ul className="flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-                >
-                  {link.label}
-                </a>
+          <ul className="flex items-center gap-7">
+            {MAIN_NAV.map((link) => (
+              <li key={link.href} className="relative">
+                {link.children ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenMenu(openMenu === link.href ? null : link.href)
+                      }
+                      aria-expanded={openMenu === link.href}
+                      aria-haspopup="true"
+                      className={`inline-flex items-center gap-1.5 rounded-lg py-2 text-sm font-medium transition-colors hover:text-foreground ${
+                        isActive(pathname, link.href)
+                          ? "text-foreground"
+                          : "text-foreground/70"
+                      }`}
+                    >
+                      {link.label}
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                        className={`transition-transform duration-200 ${
+                          openMenu === link.href ? "rotate-180" : ""
+                        }`}
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    {openMenu === link.href && (
+                      <ul
+                        className="absolute left-0 top-full w-72 rounded-2xl border border-line bg-surface p-2 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)]"
+                        role="menu"
+                      >
+                        {link.children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              onClick={() => setOpenMenu(null)}
+                              className="block rounded-xl px-4 py-2.5 text-sm text-foreground/80 transition-colors hover:bg-surface-2 hover:text-foreground"
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`rounded-lg py-2 text-sm font-medium transition-colors hover:text-foreground ${
+                      isActive(pathname, link.href)
+                        ? "text-foreground"
+                        : "text-foreground/70"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -62,12 +134,12 @@ export function Header() {
 
         <div className="hidden lg:block">
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/diagnostico-seo/"
+            data-track="diagnostico_click"
+            data-track-label="header"
             className="inline-flex h-11 items-center rounded-full bg-lime px-5 text-sm font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#e2ff85]"
           >
-            Fale conosco
+            Receber diagnóstico de SEO
           </a>
         </div>
 
@@ -103,29 +175,56 @@ export function Header() {
       {open && (
         <div
           id="menu-mobile"
-          className="fixed inset-0 top-16 z-40 bg-ink/98 lg:hidden"
+          className="fixed inset-0 top-16 z-40 overflow-y-auto bg-ink/98 lg:hidden"
         >
           <nav aria-label="Navegação móvel">
             <ul className="flex flex-col gap-1 px-5 py-6">
-              {NAV_LINKS.map((link) => (
+              {MAIN_NAV.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-3.5 text-lg font-medium text-foreground/80 transition-colors hover:bg-surface-2 hover:text-foreground"
+                    className="block rounded-lg px-3 py-3 text-base font-semibold text-foreground/80 transition-colors hover:bg-surface-2 hover:text-foreground"
                   >
                     {link.label}
-                  </a>
+                  </Link>
+                  {link.children && (
+                    <ul className="mt-1 space-y-0.5 border-l border-line/60 pl-4">
+                      {link.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={() => setOpen(false)}
+                            className="block rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
-              <li className="mt-4 px-3">
+              <li className="mt-4 flex flex-col gap-2 px-3">
+                <a
+                  href="/diagnostico-seo/"
+                  data-track="diagnostico_click"
+                  data-track-label="menu-mobile"
+                  onClick={() => setOpen(false)}
+                  className="flex h-13 w-full items-center justify-center rounded-full bg-lime px-6 text-[15px] font-semibold text-ink"
+                >
+                  Receber diagnóstico de SEO
+                </a>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-13 w-full items-center justify-center rounded-full bg-lime px-6 text-[15px] font-semibold text-ink"
+                  data-track="whatsapp_click"
+                  data-track-label="menu-mobile"
+                  onClick={() => setOpen(false)}
+                  className="flex h-13 w-full items-center justify-center rounded-full border border-line bg-surface px-6 text-[15px] font-semibold text-foreground"
                 >
-                  Fale conosco
+                  Falar no WhatsApp
                 </a>
               </li>
             </ul>

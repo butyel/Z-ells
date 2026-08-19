@@ -3,15 +3,10 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { JsonLd } from "@/components/JsonLd";
-import {
-  faqSchema,
-  organizationSchema,
-  servicesSchema,
-  webPageSchema,
-  webSiteSchema,
-} from "@/lib/schema";
-import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/site";
+import { SchemaGraph } from "@/components/SchemaGraph";
+import { Tracker } from "@/components/Tracker";
+import { baseGraphNodes } from "@/lib/schema";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/config/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,27 +23,15 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: SITE_TITLE,
+  title: "Agência de SEO Local | Google Maps e IA | Z'ells",
   description: SITE_DESCRIPTION,
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    url: SITE_URL,
-    siteName: "Z'ells",
-    type: "website",
+    siteName: SITE_NAME,
     locale: "pt_BR",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
@@ -82,11 +65,8 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
-        <JsonLd data={organizationSchema} />
-        <JsonLd data={webSiteSchema} />
-        <JsonLd data={webPageSchema} />
-        <JsonLd data={servicesSchema} />
-        <JsonLd data={faqSchema} />
+        <Tracker />
+        <SchemaGraph nodes={baseGraphNodes()} />
       </body>
     </html>
   );

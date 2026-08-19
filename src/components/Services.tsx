@@ -2,67 +2,18 @@ import { SectionHeading } from "./SectionHeading";
 import { ServiceCard } from "./ServiceCard";
 import { ButtonLink } from "./Button";
 import { Reveal } from "./Reveal";
-import { WHATSAPP_URL } from "@/lib/site";
+import { SERVICES } from "@/data/services";
 
-type ServiceItem = {
-  title: string;
-  description: string;
-  items: string[];
-  tag: string;
-  accent?: "lime" | "purple";
-};
-
-const services: ServiceItem[] = [
-  {
-    title: "SEO Local",
-    description:
-      "Posicionamento orgânico para a sua empresa aparecer quando alguém procura pelo seu serviço na sua cidade.",
-    items: [
-      "Otimização do Perfil da Empresa no Google",
-      "Aparecer no Google Maps e no Local Pack",
-      "Conteúdo alinhado às buscas locais",
-      "Acompanhamento de posições",
-    ],
-    tag: "Google",
-  },
-  {
-    title: "Perfil da Empresa no Google",
-    description:
-      "Gestão completa da ficha do seu negócio para ela se tornar a resposta certa na busca local.",
-    items: [
-      "Informações corretas e categorias certas",
-      "Fotos, horários e publicações otimizadas",
-      "Resposta e estímulo a avaliações",
-      "Monitoramento de dados e perguntas",
-    ],
-    tag: "Maps",
-  },
-  {
-    title: "Sites preparados para SEO",
-    description:
-      "Sites rápidos, com estrutura técnica e conteúdo que o Google entende e posiciona.",
-    items: [
-      "HTML semântico e páginas otimizadas",
-      "Performance e Core Web Vitals",
-      "Conteúdo orientado a intenção de busca",
-      "Base técnica para crescer em resultados",
-    ],
-    tag: "Site",
-  },
-  {
-    title: "GEO: otimização para IA",
-    description:
-      "Estratégia para a sua empresa ser citada nas respostas das ferramentas de busca por inteligência artificial.",
-    items: [
-      "Estrutura que as IAs compreendem",
-      "Entidades e autoridade do negócio",
-      "Presença em AI Search e GEO",
-      "Preparação para o futuro da busca",
-    ],
-    tag: "IA",
-    accent: "purple",
-  },
+const featuredSlugs = [
+  "seo-local",
+  "google-business-profile",
+  "sites-para-seo",
+  "seo-para-inteligencia-artificial",
 ];
+
+const featured = SERVICES.filter((service) =>
+  featuredSlugs.includes(service.slug),
+);
 
 export function Services() {
   return (
@@ -74,29 +25,42 @@ export function Services() {
         <SectionHeading
           eyebrow="Serviços"
           title="Visibilidade, autoridade e intenção de busca, do começo ao fim"
-          description="Tudo o que a Z'ells faz caminha para uma única direção: a sua empresa ser encontrada, reconhecida e escolhida."
+          description="Tudo o que a Z'ells faz caminha para uma única direção: a sua empresa ser encontrada, compreendida e escolhida."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+          {featured.map((s) => (
+            <ServiceCard
+              key={s.slug}
+              title={s.shortName}
+              description={s.description}
+              items={s.sections.flatMap((sec) => sec.list ?? []).slice(0, 3)}
+              tag={s.tag}
+              accent={s.accent}
+              href={s.path}
+            />
           ))}
         </div>
 
         <Reveal className="mt-12 flex flex-col items-center gap-4 text-center">
-          <p className="text-base text-muted">
-            Não sabe por onde começar? Vamos analisar o posicionamento atual do
-            seu negócio no Google.
+          <div className="flex flex-col items-center gap-3 sm:flex-row">
+            <ButtonLink href="/servicos/" variant="secondary" size="lg">
+              Ver todos os serviços
+            </ButtonLink>
+            <ButtonLink
+              href="/diagnostico-seo/"
+              size="lg"
+              variant="primary"
+              data-track="diagnostico_click"
+              data-track-label="services"
+            >
+              Receber diagnóstico de SEO
+            </ButtonLink>
+          </div>
+          <p className="max-w-xl text-sm text-muted">
+            Não sabe por onde começar? Analisamos como o seu negócio está hoje no
+            Google e apontamos as prioridades — sem compromisso.
           </p>
-          <ButtonLink
-            href={WHATSAPP_URL}
-            variant="secondary"
-            size="lg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Pedir diagnóstico no WhatsApp
-          </ButtonLink>
         </Reveal>
       </div>
     </section>

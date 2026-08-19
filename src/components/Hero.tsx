@@ -1,5 +1,5 @@
 import { ButtonLink } from "./Button";
-import { WHATSAPP_URL } from "@/lib/site";
+import { WHATSAPP_URL } from "@/config/site";
 
 const steps = ["ENCONTRADA", "RECONHECIDA", "ESCOLHIDA", "CONTRATADA"];
 
@@ -57,6 +57,9 @@ function SearchMock() {
           <p className="mt-0.5 truncate text-[11px] text-muted">WhatsApp</p>
         </div>
       </div>
+      <p className="mt-3 text-center text-[11px] uppercase tracking-wide text-muted/70">
+        Exemplo ilustrativo de resultado no Google Maps
+      </p>
     </div>
   );
 }
@@ -78,24 +81,30 @@ export function Hero() {
           </span>
 
           <h1 className="text-balance font-display text-[2.6rem] font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-[4.25rem]">
-            Sua empresa precisa aparecer exatamente quando o cliente{" "}
+            SEO Local para sua empresa aparecer quando o cliente{" "}
             <span className="text-lime">procura</span>.
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-            A Z&rsquo;ells posiciona o seu negócio no Google, no Google Maps e nas
-            buscas por inteligência artificial para que você seja encontrado de
-            forma natural e escolhido.
+            A Z&rsquo;ells ajuda empresas a conquistar visibilidade no Google, no
+            Google Maps e nas novas experiências de busca por inteligência
+            artificial. Para que você seja encontrado, compreendido e escolhido.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <ButtonLink href="#servicos" size="lg" variant="primary">
-              Ver como posicionar
+            <ButtonLink
+              href="/diagnostico-seo/"
+              size="lg"
+              variant="primary"
+              data-track="diagnostico_click"
+              data-track-label="hero"
+            >
+              Receber diagnóstico de SEO
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </ButtonLink>
-            <ButtonLink href={WHATSAPP_URL} size="lg" variant="secondary" target="_blank" rel="noopener noreferrer">
+            <ButtonLink href={WHATSAPP_URL} size="lg" variant="secondary" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-label="hero">
               Falar no WhatsApp
             </ButtonLink>
           </div>

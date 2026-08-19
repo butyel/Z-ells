@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Reveal } from "./Reveal";
 
 type ServiceCardProps = {
@@ -6,12 +7,20 @@ type ServiceCardProps = {
   items: string[];
   tag?: string;
   accent?: "lime" | "purple";
+  href?: string;
 };
 
-export function ServiceCard({ title, description, items, tag, accent = "lime" }: ServiceCardProps) {
+export function ServiceCard({
+  title,
+  description,
+  items,
+  tag,
+  accent = "lime",
+  href,
+}: ServiceCardProps) {
   const isPurple = accent === "purple";
-  return (
-    <Reveal
+  const content = (
+    <div
       className={`group flex h-full flex-col rounded-2xl border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 sm:p-7 ${
         isPurple
           ? "border-purple/40 hover:border-purple/70"
@@ -60,6 +69,33 @@ export function ServiceCard({ title, description, items, tag, accent = "lime" }:
           </li>
         ))}
       </ul>
+      {href && (
+        <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-lime">
+          Conhecer o serviço
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+            className="transition-transform duration-200 group-hover:translate-x-1"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      )}
+    </div>
+  );
+
+  return (
+    <Reveal className="h-full">
+      {href ? (
+        <Link href={href} className="block h-full">
+          {content}
+        </Link>
+      ) : (
+        content
+      )}
     </Reveal>
   );
 }

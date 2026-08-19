@@ -6,6 +6,7 @@ type RevealProps = {
   children: ReactNode;
   delay?: number;
   className?: string;
+  id?: string;
 };
 
 function prefersReducedMotion() {
@@ -13,7 +14,7 @@ function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
+export function Reveal({ children, delay = 0, className = "", id }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(prefersReducedMotion);
 
@@ -44,6 +45,7 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
   return (
     <div
       ref={ref}
+      id={id}
       className={`${className} transition-[opacity,transform] duration-700 ease-out will-change-[opacity,transform] ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}

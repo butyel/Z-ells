@@ -1,145 +1,197 @@
-import { PHONE_INTL, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_TITLE, SITE_URL } from "./site";
+import {
+  AUTHOR,
+  CITY,
+  COUNTRY,
+  LOGO_URL,
+  OG_IMAGE_URL,
+  PHONE_INTL,
+  SITE_DESCRIPTION,
+  SITE_LOCALE,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+  STATE,
+} from "@/config/site";
+import type { Article } from "@/data/articles";
+import type { Service } from "@/data/services";
 
-export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: SITE_NAME,
-  description: SITE_DESCRIPTION,
-  url: SITE_URL,
-  slogan: SITE_TAGLINE,
-  areaServed: {
-    "@type": "Place",
-    name: "Brasil",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: `+${PHONE_INTL}`,
-    contactType: "customer service",
-    availableLanguage: "Portuguese",
-  },
-} as const;
+export type SchemaNode = Record<string, unknown>;
 
-export const webSiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: SITE_NAME,
-  url: SITE_URL,
-  description: SITE_DESCRIPTION,
-  inLanguage: "pt-BR",
-  publisher: {
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+export const PERSON_ID = `${SITE_URL}/autor/raphael-fernandes/#person`;
+export const webPageId = (url: string) => `${url}#webpage`;
+export const breadcrumbId = (url: string) => `${url}#breadcrumb`;
+export const serviceId = (url: string) => `${url}#service`;
+
+export const knowsAbout = [
+  "SEO Local",
+  "Google Business Profile",
+  "Google Maps",
+  "Entity SEO",
+  "Answer Engine Optimization",
+  "SEO para Inteligência Artificial",
+  "Sites preparados para SEO",
+  "Posicionamento orgânico no Google",
+] as const;
+
+export function organizationNode(): SchemaNode {
+  return {
+    "@id": ORG_ID,
     "@type": "ProfessionalService",
     name: SITE_NAME,
-  },
-} as const;
+    url: SITE_URL,
+    description: SITE_DESCRIPTION,
+    slogan: SITE_TAGLINE,
+    telephone: PHONE_INTL,
+    areaServed: [
+      { "@type": "Country", name: COUNTRY },
+      { "@type": "City", name: CITY },
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: CITY,
+      addressRegion: STATE,
+      addressCountry: "BR",
+    },
+    logo: { "@type": "ImageObject", url: LOGO_URL },
+    image: { "@type": "ImageObject", url: OG_IMAGE_URL },
+    knowsAbout: [...knowsAbout],
+    founder: { "@type": "Person", "@id": PERSON_ID, name: AUTHOR.name },
+  };
+}
 
-export const webPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: SITE_TITLE,
-  url: `${SITE_URL}/#inicio`,
-  description: SITE_DESCRIPTION,
-  inLanguage: "pt-BR",
-  isPartOf: {
+export function websiteNode(): SchemaNode {
+  return {
+    "@id": WEBSITE_ID,
     "@type": "WebSite",
     name: SITE_NAME,
     url: SITE_URL,
-  },
-} as const;
+    description: SITE_DESCRIPTION,
+    inLanguage: SITE_LOCALE,
+    publisher: { "@id": ORG_ID },
+  };
+}
 
-export const servicesSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  itemListElement: [
-    {
-      "@type": "Service",
-      position: 1,
-      name: "SEO Local",
-      description:
-        "Posicionamento orgânico da sua empresa no Google para buscas relacionadas ao seu serviço na sua cidade.",
-      provider: { "@type": "ProfessionalService", name: SITE_NAME },
-      areaServed: { "@type": "Place", name: "Brasil" },
-    },
-    {
-      "@type": "Service",
-      position: 2,
-      name: "Otimização e gestão do Perfil da Empresa no Google",
-      description:
-        "Otimização do perfil para aparecer no Google Maps e no Local Pack, com informações corretas, categorias e conteúdo.",
-      provider: { "@type": "ProfessionalService", name: SITE_NAME },
-      areaServed: { "@type": "Place", name: "Brasil" },
-    },
-    {
-      "@type": "Service",
-      position: 3,
-      name: "Sites preparados para SEO",
-      description:
-        "Sites rápidos, com estrutura técnica e conteúdo organizado para o Google entender e posicionar o seu negócio.",
-      provider: { "@type": "ProfessionalService", name: SITE_NAME },
-      areaServed: { "@type": "Place", name: "Brasil" },
-    },
-    {
-      "@type": "Service",
-      position: 4,
-      name: "GEO: otimização para inteligência artificial",
-      description:
-        "Estratégia para a sua empresa ser citada nas respostas de ferramentas de busca por inteligência artificial.",
-      provider: { "@type": "ProfessionalService", name: SITE_NAME },
-      areaServed: { "@type": "Place", name: "Brasil" },
-    },
-  ],
-} as const;
+export function webPageNode(
+  url: string,
+  title: string,
+  description: string,
+): SchemaNode {
+  return {
+    "@id": webPageId(url),
+    "@type": "WebPage",
+    url,
+    name: title,
+    description,
+    inLanguage: SITE_LOCALE,
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": ORG_ID },
+    primaryImageOfPage: OG_IMAGE_URL,
+    breadcrumb: { "@id": breadcrumbId(url) },
+  };
+}
 
-export const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
+export function breadcrumbNode(
+  url: string,
+  items: { name: string; href?: string }[],
+): SchemaNode {
+  return {
+    "@id": breadcrumbId(url),
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      ...(item.href ? { item: `${SITE_URL}${item.href}` } : {}),
+    })),
+  };
+}
+
+export function serviceNode(service: Service): SchemaNode {
+  const url = `${SITE_URL}${service.path}`;
+  return {
+    "@id": serviceId(url),
+    "@type": "Service",
+    name: service.name,
+    url,
+    description: service.description,
+    serviceType: service.name,
+    inLanguage: SITE_LOCALE,
+    provider: { "@id": ORG_ID },
+    areaServed: { "@type": "Country", name: COUNTRY },
+  };
+}
+
+export function personNode(): SchemaNode {
+  return {
+    "@id": PERSON_ID,
+    "@type": "Person",
+    name: AUTHOR.name,
+    url: AUTHOR.url,
+    jobTitle: AUTHOR.role,
+    worksFor: { "@id": ORG_ID },
+    knowsAbout: [...knowsAbout],
+  };
+}
+
+export function faqNode(
+  url: string,
+  faqs: { q: string; a: string }[],
+): SchemaNode {
+  return {
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      name: "O que é SEO Local?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "SEO Local é o conjunto de estratégias para fazer a sua empresa aparecer no Google quando alguém pesquisa pelo seu serviço na sua cidade. Envolve o Perfil da Empresa no Google, o site, o conteúdo e a autoridade do negócio.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "O que é o Perfil da Empresa no Google?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "É a ficha gratuita do seu negócio no Google, onde aparecem informações como endereço, telefone, horário e fotos. Quando otimizada e bem gerida, ela faz a empresa aparecer no Google Maps e no topo do Google.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "A Z'ells trabalha com tráfego pago?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Não. O foco da Z'ells é a presença orgânica: SEO Local, Google Maps, Perfil da Empresa no Google, sites e otimização para inteligência artificial. O objetivo é a empresa ser encontrada de forma natural quando o cliente procura.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "O que é GEO e otimização para inteligência artificial?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "GEO (Generative Engine Optimization) é a estratégia para a sua empresa ser citada nas respostas das ferramentas de busca por inteligência artificial. Com estrutura e conteúdo corretos, o negócio se torna uma referência que essas ferramentas indicam.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quanto tempo leva para a minha empresa aparecer no Google?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Depende do segmento, da concorrência e do estado atual da presença digital. Os primeiros resultados costumam aparecer nas primeiras semanas, e a consolidação de posições acontece com o acompanhamento contínuo.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Para quais segmentos a Z'ells trabalha?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A Z'ells atende empresas locais que dependem de clientes na própria cidade ou região: clínicas, consultórios, oficinas, comércios, prestadores de serviço e negócios com atuação local.",
-      },
-    },
-  ],
-} as const;
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+    isPartOf: { "@id": webPageId(url) },
+  };
+}
+
+export function articleNode(article: Article): SchemaNode {
+  const url = `${SITE_URL}/blog/${article.slug}/`;
+  return {
+    "@id": url,
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    url,
+    inLanguage: SITE_LOCALE,
+    datePublished: article.publishedAt,
+    dateModified: article.updatedAt,
+    author: { "@id": PERSON_ID },
+    publisher: { "@id": ORG_ID },
+    mainEntityOfPage: { "@id": webPageId(url) },
+    image: OG_IMAGE_URL,
+    articleSection: article.category,
+  };
+}
+
+export function servicesItemListNode(
+  url: string,
+  services: Service[],
+): SchemaNode {
+  return {
+    "@type": "ItemList",
+    "@id": `${url}#services`,
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: { "@id": serviceId(`${SITE_URL}${service.path}`) },
+    })),
+  };
+}
+
+export function schemaGraph(nodes: SchemaNode[]): SchemaNode {
+  return {
+    "@context": "https://schema.org",
+    "@graph": nodes,
+  };
+}
+
+export function baseGraphNodes(): SchemaNode[] {
+  return [organizationNode(), websiteNode()];
+}

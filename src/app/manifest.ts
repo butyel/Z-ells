@@ -1,15 +1,16 @@
 import type { MetadataRoute } from "next";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/config/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Z'ells | SEO Local, Google Maps e Posicionamento no Google",
-    short_name: "Z'ells",
-    description:
-      "Agência de SEO Local. Posiciona empresas no Google, no Google Maps e nas buscas por inteligência artificial.",
+    name: `${SITE_NAME} | ${SITE_TAGLINE}`,
+    short_name: SITE_NAME,
+    description: SITE_DESCRIPTION,
     start_url: "/",
     display: "standalone",
     background_color: "#11130f",
     theme_color: "#11130f",
+    lang: "pt-BR",
     icons: [
       {
         src: "/icon.svg",
