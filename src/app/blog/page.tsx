@@ -30,7 +30,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="Blog da Z'ells"
         title={PAGE_TITLE}
-        description="Conhecimento prático sobre SEO Local, Google Maps, Perfil da Empresa no Google, Entity SEO e a busca por inteligência artificial — explicado com profundidade e sem enrolação."
+        description="Conhecimento prático sobre SEO Local, Google Maps, Perfil da Empresa no Google, Entity SEO e a busca por inteligência artificial, explicado com profundidade e sem enrolação."
       />
 
       <section className="section-pad border-t border-line/60">

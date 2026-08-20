@@ -89,7 +89,7 @@ export const SERVICES: Service[] = [
         heading: "Autoridade e avaliações",
         paragraphs: [
           "Avaliações reais são um dos sinais mais fortes para o posicionamento local. Elas influenciam a decisão do cliente e mostram ao Google que o negócio gera satisfação. Mais do que pedir avaliações, é preciso geri-las: responder, entender o que os clientes dizem e usar isso para melhorar.",
-          "A autoridade também vem de citações consistentes — o nome, endereço e telefone da empresa aparecendo da mesma forma em todos os lugares — e de menções em fontes relevantes.",
+          "A autoridade também vem de citações consistentes: o nome, endereço e telefone da empresa aparecendo da mesma forma em todos os lugares, além de menções em fontes relevantes.",
         ],
       },
       {
@@ -139,7 +139,7 @@ export const SERVICES: Service[] = [
       "Otimização e gestão do Perfil da Empresa no Google (Google Meu Negócio) para aparecer no Google Maps e no Local Pack com categorias, conteúdo e avaliações corretas.",
     h1: "Otimização do Perfil da Empresa no Google",
     intro:
-      "O Perfil da Empresa no Google — que muitos ainda conhecem como Google Meu Negócio — é a ficha gratuita que define boa parte da sua presença nas buscas locais. Bem trabalhado, ele transforma o seu negócio em uma resposta clara para quem procura pelo que você oferece na sua cidade.",
+      "O Perfil da Empresa no Google, que muitos ainda conhecem como Google Meu Negócio, é a ficha gratuita que define boa parte da sua presença nas buscas locais. Bem trabalhado, ele transforma o seu negócio em uma resposta clara para quem procura pelo que você oferece na sua cidade.",
     sections: [
       {
         heading: "O que é o Perfil da Empresa no Google?",
@@ -151,7 +151,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Categorias",
         paragraphs: [
-          "A categoria é um dos principais sinais de relevância do perfil. Ela diz ao Google o que a sua empresa é. A escolha errada — ou genérica — faz o negócio aparecer para as buscas erradas e perder oportunidades nas buscas certas.",
+          "A categoria é um dos principais sinais de relevância do perfil. Ela diz ao Google o que a sua empresa é. A escolha errada, ou genérica, faz o negócio aparecer para as buscas erradas e perder oportunidades nas buscas certas.",
           "Trabalhamos a categoria principal e as categorias secundárias para cobrir a forma como os clientes realmente procuram pelo seu serviço.",
         ],
       },
@@ -249,7 +249,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Como o Google decide quem aparece no Maps?",
         paragraphs: [
-          "O Google usa três grupos principais de fatores para definir quem aparece: relevância, distância e notoriedade. Nenhum deles sozinho define o resultado — é a combinação que importa.",
+          "O Google usa três grupos principais de fatores para definir quem aparece: relevância, distância e notoriedade. Nenhum deles sozinho define o resultado: é a combinação que importa.",
         ],
       },
       {
@@ -352,7 +352,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Correção",
         paragraphs: [
-          "Executamos as correções priorizadas, com método: perfil otimizado, estrutura do site, conteúdo e autoridade. Sem intervenções aleatórias — cada ação tem uma razão apontada pelo diagnóstico.",
+          "Executamos as correções priorizadas, com método: perfil otimizado, estrutura do site, conteúdo e autoridade. Sem intervenções aleatórias: cada ação tem uma razão apontada pelo diagnóstico.",
         ],
       },
       {
@@ -437,7 +437,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Headings e conteúdo",
         paragraphs: [
-          "Cada página tem um título principal claro e uma hierarquia de subtítulos que organiza a leitura. O conteúdo é escrito para o cliente, com intenção de busca em mente — útil para pessoas e claro para máquinas.",
+          "Cada página tem um título principal claro e uma hierarquia de subtítulos que organiza a leitura. O conteúdo é escrito para o cliente, com intenção de busca em mente: útil para pessoas e claro para máquinas.",
         ],
       },
       {
@@ -455,7 +455,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Sitemap, canonical e crawlability",
         paragraphs: [
-          "Um sitemap atualizado, canônicas corretas e uma estrutura rastreável garantem que o Google encontre e entenda as páginas importantes — e ignore o que não deve ser indexado.",
+          "Um sitemap atualizado, canônicas corretas e uma estrutura rastreável garantem que o Google encontre e entenda as páginas importantes e ignore o que não deve ser indexado.",
         ],
       },
       {
@@ -509,13 +509,13 @@ export const SERVICES: Service[] = [
       {
         heading: "O que é uma entidade?",
         paragraphs: [
-          "No contexto de busca, uma entidade é uma coisa distinta e bem definida: uma empresa, uma marca, uma pessoa, um local, um serviço. O Google constrói uma base de conhecimento sobre entidades e as relações entre elas — é o que chamamos de Knowledge Graph.",
+          "No contexto de busca, uma entidade é uma coisa distinta e bem definida: uma empresa, uma marca, uma pessoa, um local, um serviço. O Google constrói uma base de conhecimento sobre entidades e as relações entre elas, o que chamamos de Knowledge Graph.",
         ],
       },
       {
         heading: "Por que entidade importa para o SEO?",
         paragraphs: [
-          "Quando o Google entende claramente o que é a sua empresa, ele consegue conectá-la às buscas certas e às outras entidades relevantes. Uma empresa bem compreendida tem mais chances de ser apresentada como resposta — inclusive em buscas por inteligência artificial.",
+          "Quando o Google entende claramente o que é a sua empresa, ele consegue conectá-la às buscas certas e às outras entidades relevantes. Uma empresa bem compreendida tem mais chances de ser apresentada como resposta, inclusive em buscas por inteligência artificial.",
         ],
       },
       {
@@ -531,7 +531,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Consistência",
         paragraphs: [
-          "A consistência é o pilar da entidade. Se o seu negócio aparece de formas diferentes em lugares diferentes — nome abreviado aqui, telefone errado ali — o Google precisa adivinhar se é a mesma empresa. Consistência elimina essa ambiguidade.",
+          "A consistência é o pilar da entidade. Se o seu negócio aparece de formas diferentes em lugares diferentes, com nome abreviado aqui e telefone errado ali, o Google precisa adivinhar se é a mesma empresa. Consistência elimina essa ambiguidade.",
         ],
       },
       {
@@ -543,7 +543,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Relações entre fontes",
         paragraphs: [
-          "Cada fonte que menciona a sua empresa — site, perfil no Google, diretórios, imprensa — é uma confirmação da entidade. Quanto mais coerentes e relevantes são essas fontes, mais clara fica a imagem do negócio.",
+          "Cada fonte que menciona a sua empresa, como site, perfil no Google, diretórios e imprensa, é uma confirmação da entidade. Quanto mais coerentes e relevantes são essas fontes, mais clara fica a imagem do negócio.",
         ],
       },
       {
@@ -576,17 +576,17 @@ export const SERVICES: Service[] = [
   {
     slug: "aeo",
     path: "/servicos/aeo/",
-    name: "AEO — Answer Engine Optimization",
+    name: "AEO: Answer Engine Optimization",
     shortName: "AEO",
     tag: "Respostas",
     accent: "purple",
     eyebrow: "Serviço",
-    title: "AEO — Answer Engine Optimization",
+    title: "AEO: Answer Engine Optimization",
     description:
       "Answer Engine Optimization (AEO) é a estratégia para a sua empresa ser a resposta a perguntas no Google e nas ferramentas de busca por IA. Estrutura, clareza e fontes.",
-    h1: "AEO — Answer Engine Optimization",
+    h1: "AEO: Answer Engine Optimization",
     intro:
-      "Cada vez mais, as pessoas não buscam sites: buscam respostas. AEO, ou Answer Engine Optimization, é a prática de estruturar conteúdo para que a sua empresa seja a resposta — em respostas diretas do Google, em AI Overviews e nas ferramentas de busca por inteligência artificial.",
+      "Cada vez mais, as pessoas não buscam sites: buscam respostas. AEO, ou Answer Engine Optimization, é a prática de estruturar conteúdo para que a sua empresa apareça como resposta nas respostas diretas do Google, nos AI Overviews e nas ferramentas de busca por inteligência artificial.",
     sections: [
       {
         heading: "O que é AEO?",
@@ -597,7 +597,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Perguntas",
         paragraphs: [
-          "A base do AEO são as perguntas reais que as pessoas fazem. Mapear como o seu cliente pergunta — no Google, no ChatGPT, no assistente de voz — define que conteúdo precisa existir e como ele deve ser organizado.",
+          "A base do AEO são as perguntas reais que as pessoas fazem. Mapear como o seu cliente pergunta, no Google, no ChatGPT ou no assistente de voz, define que conteúdo precisa existir e como ele deve ser organizado.",
         ],
       },
       {
@@ -621,7 +621,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Conteúdo verificável",
         paragraphs: [
-          "Respostas verificáveis — com dados, fontes e exemplos reais — geram mais confiança. Mecanismos de resposta preferem informações que podem ser confirmadas em múltiplas fontes.",
+          "Respostas verificáveis, com dados, fontes e exemplos reais, geram mais confiança. Mecanismos de resposta preferem informações que podem ser confirmadas em múltiplas fontes.",
         ],
       },
       {
@@ -644,7 +644,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "AEO funciona para empresas locais?",
-        a: "Funciona. Muitas perguntas locais — \"qual a melhor clínica perto de mim\" — são respondidas com base em conteúdo e entidade. Empresas com estrutura clara têm mais chance de aparecer nessas respostas.",
+        a: "Funciona. Muitas perguntas locais, como \"qual a melhor clínica perto de mim\", são respondidas com base em conteúdo e entidade. Empresas com estrutura clara têm mais chance de aparecer nessas respostas.",
       },
       {
         q: "A Z'ells garante que minha empresa será citada pelo ChatGPT?",
@@ -675,7 +675,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Como funciona a busca por IA",
         paragraphs: [
-          "Em vez de retornar uma lista de resultados, a busca generativa resume informações de várias fontes para responder à pergunta do usuário. Isso muda o que significa ser encontrado: a empresa não precisa apenas rankear — precisa ser uma fonte confiável para a resposta.",
+          "Em vez de retornar uma lista de resultados, a busca generativa resume informações de várias fontes para responder à pergunta do usuário. Isso muda o que significa ser encontrado: a empresa não precisa apenas rankear, precisa ser uma fonte confiável para a resposta.",
         ],
       },
       {
@@ -699,7 +699,7 @@ export const SERVICES: Service[] = [
       {
         heading: "Conteúdo original",
         paragraphs: [
-          "Conteúdo original e útil — que não repete o que já existe — é valorizado pelos mecanismos e pelas IAs. Originalidade constrói autoridade e reduz a chance de ser ignorado como duplicado.",
+          "Conteúdo original e útil, que não repete o que já existe, é valorizado pelos mecanismos e pelas IAs. Originalidade constrói autoridade e reduz a chance de ser ignorado como duplicado.",
         ],
       },
       {
@@ -724,7 +724,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "Dá para aparecer no ChatGPT?",
-        a: "Ninguém pode controlar diretamente o que o ChatGPT responde. O que é possível é estruturar a presença da empresa — site, conteúdo, entidade e autoridade — para que ela seja uma fonte compreendida e plausível de ser citada.",
+        a: "Ninguém pode controlar diretamente o que o ChatGPT responde. O que é possível é estruturar a presença da empresa, com site, conteúdo, entidade e autoridade, para que ela seja uma fonte compreendida e plausível de ser citada.",
       },
       {
         q: "O que é GEO?",

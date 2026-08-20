@@ -76,7 +76,7 @@ export function DiagnosticoForm() {
     };
 
     const message = [
-      "*Diagnóstico de SEO Local — Z'ells*",
+      "*Diagnóstico de SEO Local - Z'ells*",
       "",
       `Nome: ${payload.nome}`,
       `Empresa: ${payload.empresa}`,

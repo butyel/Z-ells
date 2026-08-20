@@ -24,7 +24,7 @@ const whatYouGet = [
   },
   {
     title: "Prioridades claras",
-    text: "O que pode gerar mais impacto primeiro, com base em evidências — não em opiniões.",
+    text: "O que pode gerar mais impacto primeiro, com base em evidências, não em opiniões.",
   },
   {
     title: "Sem compromisso",

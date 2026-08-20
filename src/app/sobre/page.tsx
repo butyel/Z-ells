@@ -29,7 +29,7 @@ export default function SobrePage() {
       <PageHero
         eyebrow="Sobre a Z'ells"
         title="Uma agência boutique de SEO Local"
-        description="A Z'ells existe para uma única missão: ajudar empresas a serem encontradas, compreendidas e escolhidas no momento da busca — no Google, no Google Maps e nas novas experiências de busca por inteligência artificial."
+        description="A Z'ells existe para uma única missão: ajudar empresas a serem encontradas, compreendidas e escolhidas no momento da busca, no Google, no Google Maps e nas novas experiências de busca por inteligência artificial."
       />
 
       <section className="section-pad border-t border-line/60">
@@ -84,7 +84,7 @@ export default function SobrePage() {
               eyebrow="Posicionamento"
               title="Foco em SEO Local"
               paragraphs={[
-                "Empresas locais dependem de uma verdade simples: quando o cliente procura, o negócio precisa estar lá. O foco da Z'ells é exatamente esse — posicionar empresas nas buscas onde a localização decide a contratação.",
+                "Empresas locais dependem de uma verdade simples: quando o cliente procura, o negócio precisa estar lá. O foco da Z'ells é exatamente esse: posicionar empresas nas buscas onde a localização decide a contratação.",
                 "Isso significa trabalhar o Google e o Google Maps com profundidade, gerir o Perfil da Empresa no Google, estruturar sites preparados para SEO e construir a entidade e a autoridade que sustentam o resultado.",
               ]}
             />

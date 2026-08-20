@@ -161,13 +161,13 @@ export const ARTICLES: Article[] = [
       {
         heading: "O site como confirmador da entidade",
         paragraphs: [
-          "O site diz ao Google o que o perfil confirma. Quando as informações batem — mesmo nome, endereço, telefone e serviços — o Google entende que se trata da mesma empresa. Um site com páginas de serviço e conteúdo local reforça essa compreensão.",
+          "O site diz ao Google o que o perfil confirma. Quando as informações batem, com o mesmo nome, endereço, telefone e serviços, o Google entende que se trata da mesma empresa. Um site com páginas de serviço e conteúdo local reforça essa compreensão.",
         ],
       },
       {
         heading: "Autoridade: avaliações e citações",
         paragraphs: [
-          "Avaliações reais e bem geridas são um dos sinais mais fortes para a decisão do cliente e para o posicionamento. Citações consistentes — o NAP (nome, endereço e telefone) igual em todas as fontes — reforçam a entidade e a confiança.",
+          "Avaliações reais e bem geridas são um dos sinais mais fortes para a decisão do cliente e para o posicionamento. Citações consistentes, com o NAP (nome, endereço e telefone) igual em todas as fontes, reforçam a entidade e a confiança.",
         ],
       },
       {
@@ -223,7 +223,7 @@ export const ARTICLES: Article[] = [
       {
         heading: "Consistência: o que une todos os fatores",
         paragraphs: [
-          "Informações iguais em todas as fontes — nome, endereço e telefone — eliminam a ambiguidade. Um negócio consistente é compreendido com clareza, e compreensão clara é a base de tudo: relevância, notoriedade e entidade.",
+          "Informações iguais em todas as fontes, como nome, endereço e telefone, eliminam a ambiguidade. Um negócio consistente é compreendido com clareza, e compreensão clara é a base de tudo: relevância, notoriedade e entidade.",
         ],
       },
     ],
@@ -279,7 +279,7 @@ export const ARTICLES: Article[] = [
       {
         heading: "Perfil e site trabalham juntos",
         paragraphs: [
-          "O perfil e o site precisam contar a mesma história. Informações consistentes entre eles fortalecem a entidade do negócio e a confiança do Google. Perfil otimizado sem site coerente limita o resultado — e o inverso também.",
+          "O perfil e o site precisam contar a mesma história. Informações consistentes entre eles fortalecem a entidade do negócio e a confiança do Google. Perfil otimizado sem site coerente limita o resultado, e o inverso também.",
         ],
       },
     ],
@@ -304,14 +304,14 @@ export const ARTICLES: Article[] = [
     publishedAt: "2026-07-30",
     updatedAt: "2026-08-10",
     directAnswer:
-      "O Google entende entidades como coisas distintas — uma empresa, uma pessoa, um lugar — e as relações entre elas. Ele conecta informações de várias fontes: site, perfil no Google, diretórios e menções. Quando essas fontes são consistentes, a entidade da empresa fica clara e confiável.",
+      "O Google entende entidades como coisas distintas, por exemplo uma empresa, uma pessoa ou um lugar, e as relações entre elas. Ele conecta informações de várias fontes: site, perfil no Google, diretórios e menções. Quando essas fontes são consistentes, a entidade da empresa fica clara e confiável.",
     intro:
-      "Palavras-chave mudam, mas entidades permanecem. Entender como o Google enxerga o mundo por meio de entidades é a chave para uma presença digital que se sustenta no tempo — e que também alimenta as buscas por inteligência artificial.",
+      "Palavras-chave mudam, mas entidades permanecem. Entender como o Google enxerga o mundo por meio de entidades é a chave para uma presença digital que se sustenta no tempo e que também alimenta as buscas por inteligência artificial.",
     sections: [
       {
         heading: "O que é uma entidade para o Google",
         paragraphs: [
-          "Uma entidade é algo distinto e identificável: uma empresa, uma marca, uma pessoa, um lugar, um serviço. O Google organiza o conhecimento do mundo como uma rede de entidades conectadas — o Knowledge Graph.",
+          "Uma entidade é algo distinto e identificável: uma empresa, uma marca, uma pessoa, um lugar, um serviço. O Google organiza o conhecimento do mundo como uma rede de entidades conectadas, o Knowledge Graph.",
           "Quando o Google entende que \"a clínica X em Presidente Epitácio\" e \"o site X\" são a mesma entidade, ele pode apresentar a empresa como resposta com segurança.",
         ],
       },
@@ -341,7 +341,7 @@ export const ARTICLES: Article[] = [
       },
       {
         q: "Como saber se o Google entende a minha empresa?",
-        a: "Um bom sinal é a empresa aparecer em buscas pelo próprio nome com informações consistentes. Uma análise de entidade — que a Z'ells faz na auditoria — mostra como o Google enxerga o seu negócio hoje.",
+        a: "Um bom sinal é a empresa aparecer em buscas pelo próprio nome com informações consistentes. Uma análise de entidade, que a Z'ells faz na auditoria, mostra como o Google enxerga o seu negócio hoje.",
       },
     ],
     related: ["o-que-e-seo-local", "como-aparecer-no-chatgpt"],
@@ -357,12 +357,12 @@ export const ARTICLES: Article[] = [
     directAnswer:
       "Para ser citado pelo ChatGPT, a empresa precisa ser uma entidade clara e confiável: informações consistentes, site estruturado, conteúdo que responde perguntas e autoridade construída com fontes. Não existe controle direto sobre o que a IA responde, mas a estruturação aumenta a probabilidade de citação.",
     intro:
-      "O ChatGPT e outras ferramentas de inteligência artificial estão se tornando ponto de partida para pesquisas. Este artigo explica o que realmente influencia a citação de uma empresa por mecanismos generativos — sem promessas mágicas.",
+      "O ChatGPT e outras ferramentas de inteligência artificial estão se tornando ponto de partida para pesquisas. Este artigo explica o que realmente influencia a citação de uma empresa por mecanismos generativos, sem promessas mágicas.",
     sections: [
       {
         heading: "Como o ChatGPT escolhe o que citar",
         paragraphs: [
-          "Mecanismos generativos como o ChatGPT não têm uma lista de resultados. Eles montam respostas a partir de informações públicas que conseguem identificar e considerar confiáveis. Empresas com presença digital consistente — site, perfil, avaliações, citações — são mais fáceis de identificar e mais plausíveis de serem citadas.",
+          "Mecanismos generativos como o ChatGPT não têm uma lista de resultados. Eles montam respostas a partir de informações públicas que conseguem identificar e considerar confiáveis. Empresas com presença digital consistente, incluindo site, perfil, avaliações e citações, são mais fáceis de identificar e mais plausíveis de serem citadas.",
         ],
       },
       {
@@ -380,7 +380,7 @@ export const ARTICLES: Article[] = [
       {
         heading: "O que não funciona",
         paragraphs: [
-          "Não existe atalho para ser citado por uma IA. Textos gerados em massa, conteúdo duplicado e tentativas de enganar os mecanismos tendem a ser ignorados — ou pior, prejudicar a percepção de autoridade.",
+          "Não existe atalho para ser citado por uma IA. Textos gerados em massa, conteúdo duplicado e tentativas de enganar os mecanismos tendem a ser ignorados ou, pior, prejudicar a percepção de autoridade.",
         ],
       },
       {

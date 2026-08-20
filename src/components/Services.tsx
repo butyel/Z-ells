@@ -59,7 +59,7 @@ export function Services() {
           </div>
           <p className="max-w-xl text-sm text-muted">
             Não sabe por onde começar? Analisamos como o seu negócio está hoje no
-            Google e apontamos as prioridades — sem compromisso.
+            Google e apontamos as prioridades, sem compromisso.
           </p>
         </Reveal>
       </div>

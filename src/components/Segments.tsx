@@ -18,7 +18,7 @@ export function Segments() {
         <SectionHeading
           eyebrow="Cases"
           title="SEO aplicado em negócios reais"
-          description="A Z'ells trabalha com segmentos onde a busca local decide a contratação. Conheça os segmentos que atendemos — e como documentamos cada trabalho."
+          description="A Z'ells trabalha com segmentos onde a busca local decide a contratação. Conheça os segmentos que atendemos e como documentamos cada trabalho."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

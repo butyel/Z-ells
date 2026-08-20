@@ -32,7 +32,7 @@ export default function SeoPresidenteEpitacioPage() {
       <PageHero
         eyebrow="Presença local"
         title={`SEO Local em ${CITY}`}
-        description={`Sua empresa precisa aparecer quando o cliente da região procura. Em ${CITY}, essa busca começa no Google e no Google Maps — e a Z'ells sabe como posicionar negócios locais lá.`}
+        description={`Sua empresa precisa aparecer quando o cliente da região procura. Em ${CITY}, essa busca começa no Google e no Google Maps, e a Z'ells sabe como posicionar negócios locais lá.`}
       />
 
       <section className="section-pad border-t border-line/60">
@@ -43,7 +43,7 @@ export default function SeoPresidenteEpitacioPage() {
               title="A busca local em Presidente Epitácio"
               paragraphs={[
                 `Em ${CITY}, a decisão de contratar um serviço costuma começar na pesquisa. Quem procura por uma clínica, um escritório, uma oficina ou um comércio perto de si abre o Google e o Google Maps, vê quem aparece e escolhe a partir daí.`,
-                `Empresas que aparecem nesse momento capturam a decisão. As que não aparecem simplesmente ficam de fora — mesmo oferecendo o melhor serviço da cidade.`,
+                `Empresas que aparecem nesse momento capturam a decisão. As que não aparecem simplesmente ficam de fora, mesmo oferecendo o melhor serviço da cidade.`,
               ]}
             />
 
@@ -90,7 +90,7 @@ export default function SeoPresidenteEpitacioPage() {
               eyebrow="A Z'ells"
               title="Uma agência com base estratégica em Presidente Epitácio"
               paragraphs={[
-                `A Z'ells tem base estratégica em ${CITY}, ${STATE}. Isso significa que conhecemos de perto o contexto das empresas locais — e usamos essa operação como laboratório real do nosso próprio método de SEO Local.`,
+                `A Z'ells tem base estratégica em ${CITY}, ${STATE}. Isso significa que conhecemos de perto o contexto das empresas locais e usamos essa operação como laboratório real do nosso próprio método de SEO Local.`,
                 `O atendimento, porém, é nacional: o mesmo método que posiciona negócios em ${CITY} é aplicado para empresas de qualquer cidade do Brasil.`,
               ]}
             />

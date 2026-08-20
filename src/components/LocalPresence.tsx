@@ -16,8 +16,8 @@ export function LocalPresence() {
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
               A base estratégica da Z&rsquo;ells está em {CITY}. Acreditamos que
-              dominar a busca local onde operamos — Google, Google Maps e Local
-              Pack — é a prova real do que entregamos. O mesmo método é aplicado
+              dominar a busca local onde operamos, Google, Google Maps e Local
+              Pack, é a prova real do que entregamos. O mesmo método é aplicado
               para empresas em qualquer cidade do Brasil.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

@@ -9,7 +9,7 @@ import { SITE_URL } from "@/config/site";
 
 const PAGE_TITLE = "Método: SEO Local, Entidade e AI Visibility";
 const PAGE_DESCRIPTION =
-  "O Método Z'ells organiza o posicionamento em cinco camadas — Google Business Profile, site, entidade, autoridade externa e AI Visibility — guiadas pelo ciclo Evidência, Diagnóstico, Impacto, Correção e Medição.";
+  "O Método Z'ells organiza o posicionamento em cinco camadas: Google Business Profile, site, entidade, autoridade externa e AI Visibility, guiadas pelo ciclo Evidência, Diagnóstico, Impacto, Correção e Medição.";
 
 export const metadata = createMetadata({
   title: `${PAGE_TITLE} | Z'ells`,
@@ -158,7 +158,7 @@ export default function MetodoPage() {
             <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
               O Método Z&rsquo;ells não promete a primeira posição, não vende
               atalhos e não depende de hacks. Ele constrói o posicionamento
-              sobre evidência, trabalho técnico e conteúdo útil — o único
+              sobre evidência, trabalho técnico e conteúdo útil, o único
               caminho que se sustenta.
             </p>
           </div>

@@ -44,7 +44,7 @@ export default function TermosPage() {
             <ContentSection
               title="Conteúdo"
               paragraphs={[
-                "Os conteúdos publicados — textos, artigos e materiais — são de autoria da Z'ells e não podem ser reproduzidos sem autorização. As informações técnicas sobre SEO são apresentadas com responsabilidade e não constituem garantia de resultados específicos.",
+                "Os conteúdos publicados, como textos, artigos e materiais, são de autoria da Z'ells e não podem ser reproduzidos sem autorização. As informações técnicas sobre SEO são apresentadas com responsabilidade e não constituem garantia de resultados específicos.",
               ]}
             />
 

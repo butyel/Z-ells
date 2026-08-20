@@ -36,7 +36,7 @@ const caseSections = [
   },
   {
     step: "Resultados",
-    text: "Os números e sinais medidos, apresentados com transparência — incluindo o que não funcionou.",
+    text: "Os números e sinais medidos, apresentados com transparência, incluindo o que não funcionou.",
   },
   {
     step: "Conclusão",
@@ -69,7 +69,7 @@ export default function CasesPage() {
               Como documentamos cada trabalho
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-              Cada case segue a mesma estrutura, do desafio ao resultado — sem
+              Cada case segue a mesma estrutura, do desafio ao resultado, sem
               números inventados e sem cases sem consentimento.
             </p>
           </div>
