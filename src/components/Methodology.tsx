@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { SectionReveal } from "./motion/SectionReveal";
 import { SectionHeading } from "./SectionHeading";
 import { MethodProgress } from "./motion/MethodProgress";
 
@@ -43,9 +43,10 @@ export function Methodology() {
 
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {methodSteps.map((m, i) => (
-              <Reveal
+              <SectionReveal
                 key={m.step}
-                delay={i * 70}
+                direction="up"
+                delay={i * 0.07}
                 className="group relative rounded-xl border border-line bg-surface p-5 transition-all duration-250 sm:p-6"
               >
                 <div
@@ -80,7 +81,7 @@ export function Methodology() {
                   {m.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted">{m.text}</p>
-              </Reveal>
+              </SectionReveal>
             ))}
           </div>
         </div>

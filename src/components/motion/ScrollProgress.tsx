@@ -6,29 +6,32 @@ import { useMotion } from "./MotionProvider";
 
 export function ScrollProgress() {
   const barRef = useRef<HTMLDivElement>(null);
-  const { reduced } = useMotion();
+  const { ready, reduced } = useMotion();
 
   useEffect(() => {
-    if (reduced || !barRef.current) return;
+    if (!ready || reduced || !barRef.current) return;
 
-    gsap.set(barRef.current, { scaleX: 0, transformOrigin: "left center" });
-
-    const tween = gsap.to(barRef.current, {
-      scaleX: 1,
-      ease: "none",
-      scrollTrigger: {
-        trigger: document.documentElement,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.3,
+    const tween = gsap.fromTo(
+      barRef.current,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        ease: "none",
+        transformOrigin: "left center",
+        scrollTrigger: {
+          trigger: document.documentElement,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.3,
+        },
       },
-    });
+    );
 
     return () => {
       tween.scrollTrigger?.kill();
       tween.kill();
     };
-  }, [reduced]);
+  }, [ready, reduced]);
 
   if (reduced) return null;
 

@@ -1,8 +1,8 @@
-import { SectionHeading } from "./SectionHeading";
+import { SectionReveal } from "./motion/SectionReveal";
 import { ServiceCard } from "./ServiceCard";
 import { ButtonLink } from "./Button";
-import { SectionReveal } from "./motion/SectionReveal";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 import { SERVICES } from "@/data/services";
 
 const featuredSlugs = [
