@@ -19,12 +19,12 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={`group relative py-2 text-sm font-medium transition-colors hover:text-foreground ${
-        active ? "text-foreground" : "text-foreground/70"
+      className={`group relative py-1.5 text-[13px] font-medium transition-colors hover:text-foreground ${
+        active ? "text-foreground" : "text-foreground/65"
       }`}
     >
       {children}
-      <span className="absolute bottom-0 left-0 h-px w-0 bg-lime transition-all duration-300 group-hover:w-full" />
+      <span className="absolute bottom-0 left-0 h-px w-0 bg-lime transition-all duration-250 group-hover:w-full" />
     </Link>
   );
 }
@@ -57,17 +57,17 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-250 ${
         scrolled
           ? "border-b border-line/60 bg-ink/90 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="container-site flex h-16 items-center justify-between lg:h-[72px]">
+      <div className="container-site flex h-14 items-center justify-between lg:h-16">
         <BrandLogo onClick={() => setOpen(false)} compact />
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
-          <ul className="flex items-center gap-7">
+          <ul className="flex items-center gap-6">
             {MAIN_NAV.map((link) => (
               <li key={link.href} className="relative">
                 {link.children ? (
@@ -79,16 +79,16 @@ export function Header() {
                       }
                       aria-expanded={openMenu === link.href}
                       aria-haspopup="true"
-                      className={`group relative inline-flex items-center gap-1.5 py-2 text-sm font-medium transition-colors hover:text-foreground ${
+                      className={`group relative inline-flex items-center gap-1.5 py-1.5 text-[13px] font-medium transition-colors hover:text-foreground ${
                         isActive(pathname, link.href)
                           ? "text-foreground"
-                          : "text-foreground/70"
+                          : "text-foreground/65"
                       }`}
                     >
                       {link.label}
                       <svg
-                        width="14"
-                        height="14"
+                        width="12"
+                        height="12"
                         viewBox="0 0 24 24"
                         fill="none"
                         aria-hidden="true"
@@ -104,11 +104,11 @@ export function Header() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span className="absolute bottom-0 left-0 h-px w-0 bg-lime transition-all duration-300 group-hover:w-full" />
+                      <span className="absolute bottom-0 left-0 h-px w-0 bg-lime transition-all duration-250 group-hover:w-full" />
                     </button>
                     {openMenu === link.href && (
                       <ul
-                        className="absolute left-0 top-full w-72 rounded-2xl border border-line bg-surface p-2 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)]"
+                        className="absolute left-0 top-full w-64 rounded-xl border border-line bg-surface p-1.5 shadow-[0_20px_50px_-16px_rgba(0,0,0,0.6)]"
                         role="menu"
                       >
                         {link.children.map((child) => (
@@ -116,7 +116,7 @@ export function Header() {
                             <Link
                               href={child.href}
                               onClick={() => setOpenMenu(null)}
-                              className="block rounded-xl px-4 py-2.5 text-sm text-foreground/80 transition-colors hover:bg-surface-2 hover:text-foreground"
+                              className="block rounded-lg px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:bg-surface-2 hover:text-foreground"
                             >
                               {child.label}
                             </Link>
@@ -143,7 +143,7 @@ export function Header() {
             href="/diagnostico-seo/"
             data-track="diagnostico_click"
             data-track-label="header"
-            className="inline-flex h-11 items-center rounded-full bg-lime px-5 text-sm font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(216,255,102,0.35)]"
+            className="inline-flex h-9 items-center rounded-full bg-lime px-4 text-[13px] font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_-4px_rgba(216,255,102,0.3)]"
           >
             Receber diagnóstico de SEO
           </a>
@@ -155,10 +155,10 @@ export function Header() {
           aria-expanded={open}
           aria-controls="menu-mobile"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-foreground lg:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line bg-surface text-foreground lg:hidden"
         >
           <span className="sr-only">{open ? "Fechar menu" : "Abrir menu"}</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             {open ? (
               <path
                 d="M6 6l12 12M18 6L6 18"
@@ -181,7 +181,7 @@ export function Header() {
       {open && (
         <div
           id="menu-mobile"
-          className="fixed inset-0 top-16 z-40 overflow-y-auto bg-ink/98 lg:hidden"
+          className="fixed inset-0 top-14 z-40 overflow-y-auto bg-ink/98 lg:hidden"
         >
           <nav aria-label="Navegação móvel">
             <ul className="flex flex-col gap-1 px-5 py-6">
@@ -217,7 +217,7 @@ export function Header() {
                   data-track="diagnostico_click"
                   data-track-label="menu-mobile"
                   onClick={() => setOpen(false)}
-                  className="flex h-13 w-full items-center justify-center rounded-full bg-lime px-6 text-[15px] font-semibold text-ink"
+                  className="flex h-12 w-full items-center justify-center rounded-full bg-lime px-6 text-[15px] font-semibold text-ink"
                 >
                   Receber diagnóstico de SEO
                 </a>
@@ -228,7 +228,7 @@ export function Header() {
                   data-track="whatsapp_click"
                   data-track-label="menu-mobile"
                   onClick={() => setOpen(false)}
-                  className="flex h-13 w-full items-center justify-center rounded-full border border-line bg-surface px-6 text-[15px] font-semibold text-foreground"
+                  className="flex h-12 w-full items-center justify-center rounded-full border border-line bg-surface px-6 text-[15px] font-semibold text-foreground"
                 >
                   Falar no WhatsApp
                 </a>

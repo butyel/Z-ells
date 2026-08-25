@@ -15,16 +15,16 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-lime text-ink hover:bg-[#e2ff85] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(216,255,102,0.35)] active:translate-y-0",
+    "bg-lime text-ink hover:bg-[#e2ff85] hover:-translate-y-0.5 hover:shadow-[0_6px_24px_-4px_rgba(216,255,102,0.3)] active:translate-y-0",
   secondary:
-    "border border-line bg-surface text-foreground hover:border-lime/50 hover:bg-surface-2 hover:-translate-y-0.5 active:translate-y-0",
+    "border border-line bg-surface text-foreground hover:border-lime/40 hover:bg-surface-2 hover:-translate-y-0.5 active:translate-y-0",
   ghost:
     "text-foreground/80 hover:text-foreground hover:bg-surface-2",
 };
 
 const sizes: Record<Size, string> = {
-  md: "h-11 px-6 text-sm",
-  lg: "h-13 px-7 text-[15px]",
+  md: "h-10 px-5 text-sm",
+  lg: "h-11 px-6 text-[14px]",
 };
 
 export function ButtonLink({

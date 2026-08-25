@@ -11,19 +11,19 @@ export function ContactCTA({ title, text }: ContactCTAProps) {
   return (
     <section className="section-pad border-t border-line/60">
       <div className="container-site">
-        <Reveal className="relative overflow-hidden rounded-3xl border border-line bg-surface px-6 py-14 text-center sm:px-12 sm:py-16">
+        <Reveal className="relative overflow-hidden rounded-xl border border-line bg-surface px-6 py-12 text-center sm:px-12 sm:py-14">
           <div className="absolute inset-0 glow-card" />
           <div className="relative z-10">
-            <span className="brand-eyebrow mb-6">
+            <span className="brand-eyebrow mb-5">
               Próximo passo
             </span>
             <h2 className="mx-auto max-w-2xl text-balance font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
               {title}
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
               {text}
             </p>
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink
                 href="/diagnostico-seo/"
                 size="lg"

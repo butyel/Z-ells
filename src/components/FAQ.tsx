@@ -31,8 +31,8 @@ export const HOME_FAQS = [
 export function FAQ() {
   return (
     <section id="faq" className="section-anchor section-pad border-t border-line/60">
-      <div className="container-site grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-        <Reveal className="flex flex-col gap-4 lg:sticky lg:top-28 lg:self-start">
+      <div className="container-site grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+        <Reveal className="flex flex-col gap-3 lg:sticky lg:top-24 lg:self-start">
           <span className="brand-eyebrow w-fit">
             Perguntas frequentes
           </span>

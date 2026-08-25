@@ -9,26 +9,24 @@ export function FinalCTA() {
     <section id="contato" className="section-anchor section-pad relative overflow-hidden">
       <BrandParticles density="sparse" className="!opacity-20" />
       <BrandZ variant="medium" color="purple" className="!-right-10 !top-10 !opacity-[0.02]" />
-      <div className="absolute inset-0 bg-purple/[0.04] blur-[120px]" />
 
       <div className="container-site relative z-10">
-        <Reveal className="relative overflow-hidden rounded-3xl border border-line bg-surface px-6 py-14 text-center sm:px-12 sm:py-20">
+        <Reveal className="relative overflow-hidden rounded-xl border border-line bg-surface px-6 py-12 text-center sm:px-12 sm:py-16">
           <div className="absolute inset-0 glow-card" />
           <div className="relative z-10">
-            <span className="brand-eyebrow mb-6">
+            <span className="brand-eyebrow mb-5">
               Vamos conversar
             </span>
-            <h2 className="mx-auto max-w-3xl text-balance font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="mx-auto max-w-2xl text-balance font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
               Sua empresa pode ser{" "}
               <span className="text-lime">encontrada</span>{" "}
               antes da concorrência.
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
               Descubra, com base em evidências, como posicionar a sua empresa no
               Google, no Google Maps e nas buscas por inteligência artificial.
             </p>
-            <div className="mt-2 mx-auto h-px w-16 bg-lime/40" />
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink
                 href="/diagnostico-seo/"
                 size="lg"

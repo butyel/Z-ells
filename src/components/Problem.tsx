@@ -26,7 +26,7 @@ export function Problem() {
       className="section-anchor section-pad border-t border-line/60"
     >
       <div className="container-site">
-        <Reveal className="mb-14 flex flex-col items-center gap-4 text-center sm:mb-16">
+        <Reveal className="mb-12 flex flex-col items-center gap-3 text-center sm:mb-14">
           <span className="brand-eyebrow">
             O problema
           </span>
@@ -39,20 +39,20 @@ export function Problem() {
           </p>
         </Reveal>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2">
           {problems.map((p, i) => (
             <Reveal
               key={p.title}
               delay={i * 70}
-              className="group rounded-[20px] border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lime/28 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)] sm:p-7"
+              className="group rounded-xl border border-line bg-surface p-5 transition-all duration-250 sm:p-6"
             >
-              <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface-2 font-display text-sm font-bold text-lime transition-colors duration-300 group-hover:border-lime/30 group-hover:bg-lime/10">
+              <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-md border border-line bg-surface-2 font-display text-xs font-bold text-lime transition-colors duration-250 group-hover:border-lime/30 group-hover:bg-lime/10">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mb-2 text-lg font-semibold text-foreground">
+              <h3 className="mb-1.5 text-base font-semibold text-foreground">
                 {p.title}
               </h3>
-              <p className="text-[15px] leading-relaxed text-muted">{p.text}</p>
+              <p className="text-sm leading-relaxed text-muted">{p.text}</p>
             </Reveal>
           ))}
         </div>
