@@ -26,7 +26,7 @@ export function Segments() {
             <Reveal
               key={segment.title}
               delay={i * 60}
-              className="rounded-2xl border border-line bg-surface p-6 transition-colors duration-300 hover:border-lime/50 sm:p-7"
+              className="group rounded-[20px] border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lime/28 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)] sm:p-7"
             >
               <h3 className="mb-2 font-display text-lg font-semibold text-foreground">
                 {segment.title}

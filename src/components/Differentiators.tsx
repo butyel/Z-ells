@@ -38,11 +38,21 @@ export function Differentiators() {
             <Reveal
               key={d.title}
               delay={i * 70}
-              className="flex gap-4 rounded-2xl border border-line bg-surface p-6 transition-colors duration-300 hover:border-lime/50 sm:p-7"
+              className={`group flex gap-4 rounded-[20px] border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 sm:p-7 ${
+                i % 2 === 0
+                  ? "border-line hover:border-lime/28 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)]"
+                  : "border-purple/20 hover:border-purple/40 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)]"
+              }`}
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-surface-2 text-lime">
+              <span
+                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300 ${
+                  i % 2 === 0
+                    ? "border-line bg-surface-2 text-lime group-hover:border-lime/30 group-hover:bg-lime/10"
+                    : "border-purple/20 bg-purple/5 text-purple group-hover:border-purple/30 group-hover:bg-purple/10"
+                }`}
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 3l2.7 2.1 3.3-.5.5 3.3L21 10l-2 2.8.2 3.3-3.2 1-1.3 3-3.7-1.4-3.7 1.4-1.3-3-3.2-1 .2-3.3L3 10l1.5-2.1.5-3.3 3.3.5L12 3z" fill="#d8ff66" />
+                  <path d="M12 3l2.7 2.1 3.3-.5.5 3.3L21 10l-2 2.8.2 3.3-3.2 1-1.3 3-3.7-1.4-3.7 1.4-1.3-3-3.2-1 .2-3.3L3 10l1.5-2.1.5-3.3 3.3.5L12 3z" fill={i % 2 === 0 ? "#d8ff66" : "#6f61ff"} />
                 </svg>
               </span>
               <div>

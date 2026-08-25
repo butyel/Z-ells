@@ -8,7 +8,7 @@ export function LocalPresence() {
       <div className="container-site">
         <Reveal className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-lime">
+            <span className="brand-eyebrow mb-6">
               Presença local
             </span>
             <h2 className="text-balance font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
@@ -20,6 +20,7 @@ export function LocalPresence() {
               Pack, é a prova real do que entregamos. O mesmo método é aplicado
               para empresas em qualquer cidade do Brasil.
             </p>
+            <div className="mt-2 h-px w-16 bg-lime/40" />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <ButtonLink href="/seo-presidente-epitacio/" variant="primary" size="lg">
                 SEO em Presidente Epitácio
@@ -30,7 +31,7 @@ export function LocalPresence() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
+          <div className="rounded-[20px] border border-line bg-surface p-6 sm:p-8">
             <ul className="space-y-5">
               {[
                 { label: "Google Maps", text: "Aparecer no mapa quando o cliente procura na região." },

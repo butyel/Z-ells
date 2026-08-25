@@ -28,7 +28,7 @@ export function FaqAccordion({
         return (
           <div
             key={faq.q}
-            className="rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-lime/40"
+            className="rounded-[20px] border border-line bg-surface transition-all duration-300 hover:border-lime/28"
           >
             <h3>
               <button
@@ -42,8 +42,8 @@ export function FaqAccordion({
                   {faq.q}
                 </span>
                 <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-foreground transition-transform duration-300 ${
-                    open ? "rotate-45 border-lime/50 text-lime" : ""
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-foreground transition-all duration-300 ${
+                    open ? "rotate-45 border-lime/50 text-lime bg-lime/5" : ""
                   }`}
                   aria-hidden="true"
                 >

@@ -5,17 +5,26 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MAIN_NAV } from "@/data/navigation";
 import { WHATSAPP_URL } from "@/config/site";
+import { BrandLogo } from "./BrandLogo";
 
-function Logo({ onClick }: { onClick?: () => void }) {
+function NavLink({
+  href,
+  active,
+  children,
+}: {
+  href: string;
+  active: boolean;
+  children: React.ReactNode;
+}) {
   return (
     <Link
-      href="/"
-      onClick={onClick}
-      className="group inline-flex items-baseline gap-1 font-display text-xl font-bold tracking-tight"
-      aria-label="Z'ells, ir para o início"
+      href={href}
+      className={`group relative py-2 text-sm font-medium transition-colors hover:text-foreground ${
+        active ? "text-foreground" : "text-foreground/70"
+      }`}
     >
-      <span className="text-foreground">Z&rsquo;ells</span>
-      <span className="h-1.5 w-1.5 self-center rounded-full bg-lime transition-transform duration-200 group-hover:scale-150" />
+      {children}
+      <span className="absolute bottom-0 left-0 h-px w-0 bg-lime transition-all duration-300 group-hover:w-full" />
     </Link>
   );
 }
@@ -48,14 +57,14 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-line/80 bg-ink/85 backdrop-blur-md"
+          ? "border-b border-line/60 bg-ink/90 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
       <div className="container-site flex h-16 items-center justify-between lg:h-[72px]">
-        <Logo onClick={() => setOpen(false)} />
+        <BrandLogo onClick={() => setOpen(false)} compact />
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
           <ul className="flex items-center gap-7">
@@ -70,7 +79,7 @@ export function Header() {
                       }
                       aria-expanded={openMenu === link.href}
                       aria-haspopup="true"
-                      className={`inline-flex items-center gap-1.5 rounded-lg py-2 text-sm font-medium transition-colors hover:text-foreground ${
+                      className={`group relative inline-flex items-center gap-1.5 py-2 text-sm font-medium transition-colors hover:text-foreground ${
                         isActive(pathname, link.href)
                           ? "text-foreground"
                           : "text-foreground/70"
@@ -95,6 +104,7 @@ export function Header() {
                           strokeLinejoin="round"
                         />
                       </svg>
+                      <span className="absolute bottom-0 left-0 h-px w-0 bg-lime transition-all duration-300 group-hover:w-full" />
                     </button>
                     {openMenu === link.href && (
                       <ul
@@ -116,16 +126,12 @@ export function Header() {
                     )}
                   </>
                 ) : (
-                  <Link
+                  <NavLink
                     href={link.href}
-                    className={`rounded-lg py-2 text-sm font-medium transition-colors hover:text-foreground ${
-                      isActive(pathname, link.href)
-                        ? "text-foreground"
-                        : "text-foreground/70"
-                    }`}
+                    active={isActive(pathname, link.href)}
                   >
                     {link.label}
-                  </Link>
+                  </NavLink>
                 )}
               </li>
             ))}
@@ -137,7 +143,7 @@ export function Header() {
             href="/diagnostico-seo/"
             data-track="diagnostico_click"
             data-track-label="header"
-            className="inline-flex h-11 items-center rounded-full bg-lime px-5 text-sm font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#e2ff85]"
+            className="inline-flex h-11 items-center rounded-full bg-lime px-5 text-sm font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-4px_rgba(216,255,102,0.35)]"
           >
             Receber diagnóstico de SEO
           </a>

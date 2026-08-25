@@ -27,7 +27,7 @@ export function Problem() {
     >
       <div className="container-site">
         <Reveal className="mb-14 flex flex-col items-center gap-4 text-center sm:mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-lime">
+          <span className="brand-eyebrow">
             O problema
           </span>
           <h2 className="max-w-2xl text-balance font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
@@ -44,9 +44,9 @@ export function Problem() {
             <Reveal
               key={p.title}
               delay={i * 70}
-              className="rounded-2xl border border-line bg-surface p-6 transition-colors duration-300 hover:border-lime/50 sm:p-7"
+              className="group rounded-[20px] border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lime/28 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)] sm:p-7"
             >
-              <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface-2 font-display text-sm font-bold text-lime">
+              <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface-2 font-display text-sm font-bold text-lime transition-colors duration-300 group-hover:border-lime/30 group-hover:bg-lime/10">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mb-2 text-lg font-semibold text-foreground">

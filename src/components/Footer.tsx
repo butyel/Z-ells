@@ -6,6 +6,7 @@ import {
   MAIN_NAV,
 } from "@/data/navigation";
 import { PHONE_DISPLAY, TEL_URL, WHATSAPP_URL } from "@/config/site";
+import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
   return (
@@ -13,13 +14,7 @@ export function Footer() {
       <div className="container-site py-14 sm:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.2fr_1.2fr]">
           <div>
-            <Link
-              href="/"
-              className="inline-flex items-baseline gap-1 font-display text-xl font-bold tracking-tight"
-            >
-              <span className="text-foreground">Z&rsquo;ells</span>
-              <span className="h-1.5 w-1.5 self-center rounded-full bg-lime" />
-            </Link>
+            <BrandLogo compact />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
               Agência boutique de SEO Local. Posicionamos empresas no Google, no
               Google Maps e nas buscas por inteligência artificial. Para que você

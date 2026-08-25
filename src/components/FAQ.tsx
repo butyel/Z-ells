@@ -33,7 +33,7 @@ export function FAQ() {
     <section id="faq" className="section-anchor section-pad border-t border-line/60">
       <div className="container-site grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <Reveal className="flex flex-col gap-4 lg:sticky lg:top-28 lg:self-start">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-lime">
+          <span className="brand-eyebrow w-fit">
             Perguntas frequentes
           </span>
           <h2 className="text-balance font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">

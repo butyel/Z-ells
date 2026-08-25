@@ -29,7 +29,7 @@ export function Services() {
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {featured.map((s) => (
+          {featured.map((s, i) => (
             <ServiceCard
               key={s.slug}
               title={s.shortName}
@@ -38,6 +38,7 @@ export function Services() {
               tag={s.tag}
               accent={s.accent}
               href={s.path}
+              index={i + 1}
             />
           ))}
         </div>
