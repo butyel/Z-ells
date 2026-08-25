@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { SectionReveal } from "./motion/SectionReveal";
 import { SectionHeading } from "./SectionHeading";
 
 const differentiators = [
@@ -35,9 +35,10 @@ export function Differentiators() {
 
         <div className="grid gap-3 sm:grid-cols-2">
           {differentiators.map((d, i) => (
-            <Reveal
+            <SectionReveal
               key={d.title}
-              delay={i * 70}
+              direction={i % 2 === 0 ? "left" : "right"}
+              delay={i * 0.07}
               className={`group flex gap-3.5 rounded-xl border bg-surface p-5 transition-all duration-250 sm:p-6 ${
                 i % 2 === 0
                   ? "border-line hover:border-lime/30"
@@ -61,7 +62,7 @@ export function Differentiators() {
                 </h3>
                 <p className="text-sm leading-relaxed text-muted">{d.text}</p>
               </div>
-            </Reveal>
+            </SectionReveal>
           ))}
         </div>
       </div>

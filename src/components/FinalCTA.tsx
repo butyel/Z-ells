@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { SectionReveal } from "./motion/SectionReveal";
 import { ButtonLink } from "./Button";
 import { WHATSAPP_URL } from "@/config/site";
 import { BrandZ } from "./BrandZ";
@@ -11,7 +11,7 @@ export function FinalCTA() {
       <BrandZ variant="medium" color="purple" className="!-right-10 !top-10 !opacity-[0.02]" />
 
       <div className="container-site relative z-10">
-        <Reveal className="relative overflow-hidden rounded-xl border border-line bg-surface px-6 py-12 text-center sm:px-12 sm:py-16">
+        <SectionReveal direction="up" className="relative overflow-hidden rounded-xl border border-line bg-surface px-6 py-12 text-center sm:px-12 sm:py-16">
           <div className="absolute inset-0 glow-card" />
           <div className="relative z-10">
             <span className="brand-eyebrow mb-5">
@@ -52,7 +52,7 @@ export function FinalCTA() {
               </ButtonLink>
             </div>
           </div>
-        </Reveal>
+        </SectionReveal>
       </div>
     </section>
   );

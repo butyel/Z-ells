@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { SectionReveal } from "./motion/SectionReveal";
 import { FaqAccordion } from "./FaqAccordion";
 
 export const HOME_FAQS = [
@@ -32,7 +32,7 @@ export function FAQ() {
   return (
     <section id="faq" className="section-anchor section-pad border-t border-line/60">
       <div className="container-site grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
-        <Reveal className="flex flex-col gap-3 lg:sticky lg:top-24 lg:self-start">
+        <SectionReveal direction="left" className="flex flex-col gap-3 lg:sticky lg:top-24 lg:self-start">
           <span className="brand-eyebrow w-fit">
             Perguntas frequentes
           </span>
@@ -43,7 +43,7 @@ export function FAQ() {
             Alguma outra dúvida? Fale com a gente no WhatsApp e tiramos em
             poucos minutos.
           </p>
-        </Reveal>
+        </SectionReveal>
 
         <FaqAccordion items={HOME_FAQS} idPrefix="home-faq" />
       </div>

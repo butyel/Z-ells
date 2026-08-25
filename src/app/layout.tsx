@@ -5,6 +5,9 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SchemaGraph } from "@/components/SchemaGraph";
 import { Tracker } from "@/components/Tracker";
+import { MotionProvider } from "@/components/motion/MotionProvider";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
+import { PageTransition } from "@/components/motion/PageTransition";
 import { baseGraphNodes } from "@/lib/schema";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/config/site";
 import "./globals.css";
@@ -53,20 +56,23 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
-        <a
-          href="#conteudo"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-lime focus:px-4 focus:py-2 focus:font-semibold focus:text-ink"
-        >
-          Pular para o conteúdo
-        </a>
-        <Header />
-        <main id="conteudo" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
-        <Tracker />
-        <SchemaGraph nodes={baseGraphNodes()} />
+        <MotionProvider>
+          <ScrollProgress />
+          <a
+            href="#conteudo"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-lime focus:px-4 focus:py-2 focus:font-semibold focus:text-ink"
+          >
+            Pular para o conteúdo
+          </a>
+          <Header />
+          <main id="conteudo" className="flex-1">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+          <WhatsAppButton />
+          <Tracker />
+          <SchemaGraph nodes={baseGraphNodes()} />
+        </MotionProvider>
       </body>
     </html>
   );

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useCallback, useRef } from "react";
 import { Reveal } from "./Reveal";
 
 type ServiceCardProps = {
@@ -21,14 +24,43 @@ export function ServiceCard({
   index,
 }: ServiceCardProps) {
   const isPurple = accent === "purple";
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const onPointerMove = useCallback((e: React.PointerEvent) => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--spotlight-x", `${x}px`);
+    card.style.setProperty("--spotlight-y", `${y}px`);
+  }, []);
+
+  const accentColor = isPurple ? "111,97,255" : "216,255,102";
+
   const content = (
     <div
-      className={`group flex h-full flex-col rounded-xl border bg-surface p-5 transition-all duration-250 sm:p-6 ${
+      ref={cardRef}
+      onPointerMove={onPointerMove}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-xl border bg-surface p-5 transition-all duration-250 sm:p-6 ${
         isPurple
           ? "border-purple/20 hover:border-purple/40"
           : "border-line hover:border-lime/30"
       }`}
+      style={{
+        "--spotlight-x": "50%",
+        "--spotlight-y": "50%",
+      } as React.CSSProperties}
     >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background: `radial-gradient(320px circle at var(--spotlight-x) var(--spotlight-y), rgba(${accentColor}, 0.06), transparent 60%)`,
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative z-10">
       <div className="mb-4 flex items-start justify-between gap-3">
         <div className="flex items-center gap-2.5">
           {index !== undefined && (
@@ -99,6 +131,7 @@ export function ServiceCard({
           </svg>
         </span>
       )}
+      </div>
     </div>
   );
 

@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
+import { MethodProgress } from "./motion/MethodProgress";
 
 const methodSteps = [
   {
@@ -38,7 +39,7 @@ export function Methodology() {
         />
 
         <div className="relative">
-          <div className="absolute left-0 right-0 top-[2.75rem] hidden h-px bg-line/40 lg:block" />
+          <MethodProgress count={methodSteps.length} />
 
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {methodSteps.map((m, i) => (

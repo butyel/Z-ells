@@ -1,6 +1,7 @@
 import { SectionHeading } from "./SectionHeading";
 import { ServiceCard } from "./ServiceCard";
 import { ButtonLink } from "./Button";
+import { SectionReveal } from "./motion/SectionReveal";
 import { Reveal } from "./Reveal";
 import { SERVICES } from "@/data/services";
 
@@ -30,16 +31,22 @@ export function Services() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((s, i) => (
-            <ServiceCard
+            <SectionReveal
               key={s.slug}
-              title={s.shortName}
-              description={s.description}
-              items={s.sections.flatMap((sec) => sec.list ?? []).slice(0, 3)}
-              tag={s.tag}
-              accent={s.accent}
-              href={s.path}
-              index={i + 1}
-            />
+              direction="up"
+              delay={i * 0.08}
+              className="h-full"
+            >
+              <ServiceCard
+                title={s.shortName}
+                description={s.description}
+                items={s.sections.flatMap((sec) => sec.list ?? []).slice(0, 3)}
+                tag={s.tag}
+                accent={s.accent}
+                href={s.path}
+                index={i + 1}
+              />
+            </SectionReveal>
           ))}
         </div>
 

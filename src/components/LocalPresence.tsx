@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { SectionReveal } from "./motion/SectionReveal";
 import { ButtonLink } from "./Button";
 import { CITY, STATE } from "@/config/site";
 
@@ -6,7 +6,7 @@ export function LocalPresence() {
   return (
     <section className="section-pad border-t border-line/60">
       <div className="container-site">
-        <Reveal className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <SectionReveal direction="left" className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           <div>
             <span className="brand-eyebrow mb-5">
               Presença local
@@ -53,7 +53,7 @@ export function LocalPresence() {
               ))}
             </ul>
           </div>
-        </Reveal>
+        </SectionReveal>
       </div>
     </section>
   );

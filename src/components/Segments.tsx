@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { SectionReveal } from "./motion/SectionReveal";
 import { SectionHeading } from "./SectionHeading";
 import { ButtonLink } from "./Button";
 
@@ -23,9 +23,10 @@ export function Segments() {
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {segments.map((segment, i) => (
-            <Reveal
+            <SectionReveal
               key={segment.title}
-              delay={i * 60}
+              direction="up"
+              delay={i * 0.06}
               className="group rounded-xl border border-line bg-surface p-5 transition-all duration-250 sm:p-6"
             >
               <h3 className="mb-1.5 font-display text-base font-semibold text-foreground">
@@ -34,11 +35,11 @@ export function Segments() {
               <p className="text-sm leading-relaxed text-muted">
                 {segment.text}
               </p>
-            </Reveal>
+            </SectionReveal>
           ))}
         </div>
 
-        <Reveal className="mt-8 flex flex-col items-center gap-3 text-center">
+        <SectionReveal direction="up" delay={0.3} className="mt-8 flex flex-col items-center gap-3 text-center">
           <p className="max-w-xl text-sm text-muted">
             Casos e resultados são publicados somente com autorização dos
             clientes e com dados reais.
@@ -46,7 +47,7 @@ export function Segments() {
           <ButtonLink href="/cases/" variant="secondary" size="lg">
             Ver como documentamos os cases
           </ButtonLink>
-        </Reveal>
+        </SectionReveal>
       </div>
     </section>
   );

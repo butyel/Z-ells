@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { SectionReveal } from "./motion/SectionReveal";
 
 const problems = [
   {
@@ -26,7 +26,7 @@ export function Problem() {
       className="section-anchor section-pad border-t border-line/60"
     >
       <div className="container-site">
-        <Reveal className="mb-12 flex flex-col items-center gap-3 text-center sm:mb-14">
+        <SectionReveal direction="up" className="mb-12 flex flex-col items-center gap-3 text-center sm:mb-14">
           <span className="brand-eyebrow">
             O problema
           </span>
@@ -37,13 +37,14 @@ export function Problem() {
             Antes de comparar preço, o cliente decide entre quem aparece. A Z&rsquo;ells
             existe para que a sua empresa seja essa escolha.
           </p>
-        </Reveal>
+        </SectionReveal>
 
         <div className="grid gap-3 sm:grid-cols-2">
           {problems.map((p, i) => (
-            <Reveal
+            <SectionReveal
               key={p.title}
-              delay={i * 70}
+              direction={i % 2 === 0 ? "left" : "right"}
+              delay={i * 0.07}
               className="group rounded-xl border border-line bg-surface p-5 transition-all duration-250 sm:p-6"
             >
               <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-md border border-line bg-surface-2 font-display text-xs font-bold text-lime transition-colors duration-250 group-hover:border-lime/30 group-hover:bg-lime/10">
@@ -53,7 +54,7 @@ export function Problem() {
                 {p.title}
               </h3>
               <p className="text-sm leading-relaxed text-muted">{p.text}</p>
-            </Reveal>
+            </SectionReveal>
           ))}
         </div>
       </div>
